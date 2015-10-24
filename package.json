@@ -1,0 +1,27 @@
+{
+  "name": "marko-backend",
+  "version": "0.0.1",
+  "description": "The backend to Marko, our Money 20/20 hack.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplyianm/marko-backend.git"
+  },
+  "author": "Ian Macalinao <me@ian.pw>",
+  "license": "Proprietary",
+  "bugs": {
+    "url": "https://github.com/simplyianm/marko-backend/issues"
+  },
+  "homepage": "https://github.com/simplyianm/marko-backend",
+  "dependencies": {
+    "babel": "^5.8.29",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
+  }
+}
