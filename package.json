@@ -4,6 +4,7 @@
   "description": "The backend to Marko, our Money 20/20 hack.",
   "main": "app.js",
   "scripts": {
+    "start": "babel-node app",
     "test": "mocha -R spec"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/simplyianm/marko-backend",
   "dependencies": {
     "babel": "^5.8.29",
+    "body-parser": "^1.14.1",
     "express": "^4.13.3"
   },
   "devDependencies": {
