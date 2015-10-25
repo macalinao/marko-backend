@@ -91,6 +91,11 @@ export function voiceHandler(req, res) {
   } else if (/different shoes/.test(query)) {
     outfit[2] = Math.floor(Math.random() * 5) + 1;
     lol.message = "I found you some new shoes. Hope you like them!";
+  } else if (/thanks/.test(query)) {
+    lol.message = rand(
+      `Anytime, ${user.name.nick}.`,
+      `Sure thing, ${user.name.nick}.`
+    );
   } else {
     lol.message = "I didn't understand that.";
   }
