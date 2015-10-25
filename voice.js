@@ -122,6 +122,7 @@ function nextOutfit() {
 
 export function fetchLol(req, res) {
   let user = users[active.user];
+  console.log(user);
   let lol = (user.session || {}).lol;
   res.json(lol);
 }
