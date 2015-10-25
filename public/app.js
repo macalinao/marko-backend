@@ -15,6 +15,45 @@ angular.module('marko', ['ui.router'])
 })
 
 .controller('AiCtrl', function($scope) {
+
+  $scope.talking = false;
+
+  $scope.toggleTalking = function() {
+    $scope.talking = !$scope.talking;
+  };
+
+  $scope.$watch('talking', function() {
+
+    setTimeout(function() {
+
+    if ($scope.talking) {
+
+      var siriWaveActive = new SiriWave9({
+          container: document.getElementById('siriActive'),
+          width: 640,
+          height: 50,
+          speed: 0.01,
+          frequency: 1
+      });
+      siriWaveActive.start();
+
+    } else {
+
+      var siriWavePassive = new SiriWave9({
+          container: document.getElementById('siriPassive'),
+          width: 640,
+          height: 15,
+          speed: 0.01,
+          frequency: 1
+      });
+      siriWavePassive.start();
+
+    }
+
+    }, 0);
+
+  });
+
 })
 
 .controller('DashboardCtrl', function($scope) {

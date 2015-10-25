@@ -1,3 +1,14 @@
-<img ng-src="images/clothes/shirt{{outfit[0]}}.png" />
-<img ng-src="images/clothes/pants{{outfit[1]}}.png" />
-<img ng-src="images/clothes/shoes{{outfit[2]}}.png" />
+<div id="ai">
+  <div ng-if="!outfit">
+    <h1>What would you like to wear?</h1>
+  </div>
+  <div ng-if="outfit">
+    <img ng-src="images/clothes/shirt{{outfit.parts[0]}}.png" />
+    <img ng-src="images/clothes/{{(outfit.weather ? "shorts" : "pants") + outfit.parts[1]}}.png" />
+    <img ng-src="images/clothes/shoes{{outfit.parts[2]}}.png" />
+  </div>
+  <div id="siri">
+    <div id="siriActive" ng-if="talking" ng-click="toggleTalking()"></div>
+    <div id="siriPassive" ng-if="!talking" ng-click="toggleTalking()"></div>
+  </div>
+</div>
