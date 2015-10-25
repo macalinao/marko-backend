@@ -36,7 +36,7 @@ export function voiceHandler(req, res) {
   }
 
   let session;
-  if (reset) {
+  if (reset === "true") {
     session = user.session = {
       initial: true
     };
