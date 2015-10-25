@@ -106,6 +106,59 @@ angular.module('marko', ['ui.router'])
     }
   });
 
+  Morris.Line({
+    element: 'kioskChart',
+    data: [
+      { y: '2015-01-01', a: 100 },
+      { y: '2015-01-08', a: 121 },
+      { y: '2015-01-15', a: 145 },
+      { y: '2015-01-22', a: 212 },
+      { y: '2015-01-29', a: 200 },
+      { y: '2015-02-05', a: 247 },
+      { y: '2015-02-12', a: 361 },
+      { y: '2015-02-19', a: 370 },
+      { y: '2015-02-26', a: 360 }
+    ],
+    xkey: 'y',
+    xLabels: ['week'],
+    ykeys: ['a'],
+    labels: ['Kiosk Interactions']
+  });
+
+
+  Morris.Bar({
+    element: 'popularclothingChart',
+    data: [
+      { y: 'White Shirt', a: 212 },
+      { y: 'Dark Denim Jeans', a: 174 },
+      { y: 'Light Blue Shirt', a: 142 },
+      { y: 'White Sneakers', a: 133 },
+      { y: 'Tan Chinos', a: 110 }
+    ],
+    xkey: 'y',
+    xLabels: ['Clothing Item'],
+    ykeys: ['a'],
+    labels: ['Number of Purchases']
+  });
+
+  Morris.Bar({
+    element: 'recommendationrateChart',
+    data: [
+      { y: 'White Shirt', a: 62 },
+      { y: 'Dark Denim Jeans', a: 57 },
+      { y: 'Light Blue Shirt', a: 48 },
+      { y: 'White Sneakers', a: 40 },
+      { y: 'Tan Chinos', a: 33 }
+    ],
+    xkey: 'y',
+    xLabels: ['Clothing Item'],
+    ykeys: ['a'],
+    labels: ['Kiosk Recommendation Rate'],
+    yLabelFormat: function (x) {
+      return x.toString() + '%';
+    }
+  });
+
 })
 
 .controller('PayCtrl', function($scope) {
