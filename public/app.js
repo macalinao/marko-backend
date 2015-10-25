@@ -31,7 +31,7 @@ angular.module('marko', ['ui.router'])
       var siriWaveActive = new SiriWave9({
           container: document.getElementById('siriActive'),
           width: 640,
-          height: 50,
+          height: 70,
           speed: 0.01,
           frequency: 1
       });
