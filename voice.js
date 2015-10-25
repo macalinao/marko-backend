@@ -72,7 +72,7 @@ export function voiceHandler(req, res) {
     }
 
     session.lol = ret;
-    res.json(ret);
+    return res.json(ret);
   }
 
   let message = 'lol';
