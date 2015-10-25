@@ -98,7 +98,7 @@ export function voiceHandler(req, res) {
     );
   } else if (/fuck/.test(query)) {
     lol.message = "That's not very nice.";
-  } else if (/pick again/.test(query)) {
+  } else if (/(pick again|new outfit)/.test(query)) {
     lol.outfit = nextOutfit();
     lol.message = "I created a new outfit for you. How do you like it?";
   } else {
