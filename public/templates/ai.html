@@ -4,8 +4,8 @@
   <div ng-if="outfit && outfit.parts && outfit.parts.length > 0">
     <div id="clothes">
       <img ng-src="images/clothes/shirt{{outfit.parts[0]}}.png" />
-      <img ng-src="images/clothes/shorts{{outfit.parts[1]}}.png" ng-if="outfit.weather" />
-      <img ng-src="images/clothes/pants{{outfit.parts[1]}}.png" ng-if="!outfit.weather" />
+      <img ng-src="images/clothes/shorts{{outfit.parts[1]}}.png" ng-if="!outfit.weather" />
+      <img ng-src="images/clothes/pants{{outfit.parts[1]}}.png" ng-if="outfit.weather" />
       <img ng-src="images/clothes/shoe{{outfit.parts[2]}}.png" />
     </div>
   </div>
