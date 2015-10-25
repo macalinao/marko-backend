@@ -58,14 +58,19 @@ angular.module('marko', ['ui.router'])
   $scope.start = false;
   $interval(function() {
     $http.get('/fetch_lol').then(function(data) {
+      data = data.data;
       if (!data.message) return;
       $scope.start = true;
       if (data.message !== $scope.message) {
         $scope.message = data.message;
-        $scope.outfit = {
-          parts: data.outfit,
-          weather : data.cool
-        };
+        if (data.outfit) {
+          $scope.outfit = {
+            parts: data.outfit,
+            weather: data.cool
+          };
+        } else {
+          delete $scope.outfit;
+        }
       }
     });
   }, 250);

@@ -1,8 +1,5 @@
 <div id="ai">
-
-  <div ng-if="!outfit">
-    <h1 class="animated fadeInUp">{{message}}</h1>
-  </div>
+  <h1 class="animated fadeInUp">{{message}}</h1>
 
   <div ng-if="outfit && outfit.weather">
     <h1 class="animated fadeInUp">{{message}}</h1>
@@ -14,7 +11,7 @@
     </div>
   </div>
 
-  <div id="siri" ng-if="start">
+  <div id="siri" ng-class="{ hidden: !start }">
     <div id="siriActive" ng-if="talking" ng-click="toggleTalking()"></div>
     <div id="siriPassive" ng-if="!talking" ng-click="toggleTalking()"></div>
   </div>
