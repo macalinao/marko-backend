@@ -28,7 +28,8 @@ const active = {
 
 export function voiceHandler(req, res) {
 
-  const { uid, query, reset } = req.query;
+  let { uid, query, reset } = req.query;
+  query = query.toLowerCase();
 
   let user = users[uid];
   if (!user) {
@@ -75,8 +76,23 @@ export function voiceHandler(req, res) {
     return res.end(ret.message);
   }
 
-  let message = 'lol';
-  res.json({ message });
+
+  let lol = session.lol;
+  let outfit = lol.outfit;
+  if (/next shirt/.test(query)) {
+    outfit[0] = Math.floor(Math.random() * 5) + 1;
+    lol.message = "I found you a new shirt.";
+  } else if (/next shorts/.test(query)) {
+    outfit[1] = Math.floor(Math.random() * 5) + 1;
+    lol.message = "I found you some new shorts.";
+  } else if (/next pants/.test(query)) {
+    outfit[1] = Math.floor(Math.random() * 5) + 1;
+    lol.message = "I found you some new pants.";
+  } else if (/next shoes/.test(query)) {
+    outfit[2] = Math.floor(Math.random() * 5) + 1;
+    lol.message = "I found you some new shoes. Hope you like them!";
+  }
+  res.end(lol.message);
 };
 
 function rand(...picks) {
