@@ -1,22 +1,23 @@
 angular.module('marko', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('home', {
-    url: '/',
-    templateUrl: 'templates/home.html',
-    controller: 'TemplateCtrl'
+  $stateProvider.state('ai', {
+    url: '/ai',
+    templateUrl: 'templates/ai.html',
+    controller: 'AiCtrl'
   }).state('dashboard', {
     url: '/dashboard',
     templateUrl: 'templates/dashboard.html',
     controller: 'DashboardCtrl'
 	});
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/dashboard');
 })
 
-.controller('TemplateCtrl', function($scope) {
+.controller('AiCtrl', function($scope) {
+})
 
-}).controller('DashboardCtrl', function($scope) {
+.controller('DashboardCtrl', function($scope) {
 
   $(function() {
 
