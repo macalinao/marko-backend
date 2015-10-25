@@ -36,6 +36,11 @@ export function voiceHandler(req, res) {
     user = users[uid] = {};
   }
 
+  if (query === active.lastQuery) {
+    return res.end();
+  }
+  active.lastQuery = query;
+
   let session;
   if (query === "_") {
     session = user.session = {
