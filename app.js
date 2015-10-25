@@ -6,13 +6,12 @@ import { voiceHandler } from './voice';
 const app = express();
 
 app.use(express.static(`${__dirname}/public`));
-app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.end('Hello, world!');
 });
 
-app.post('/handle_voice', voiceHandler);
+app.get('/handle_voice', voiceHandler);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
