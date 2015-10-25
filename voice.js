@@ -79,18 +79,20 @@ export function voiceHandler(req, res) {
 
   let lol = session.lol;
   let outfit = lol.outfit;
-  if (/next shirt/.test(query)) {
+  if (/different shirt/.test(query)) {
     outfit[0] = Math.floor(Math.random() * 5) + 1;
     lol.message = "I found you a new shirt.";
-  } else if (/next shorts/.test(query)) {
+  } else if (/different shorts/.test(query)) {
     outfit[1] = Math.floor(Math.random() * 5) + 1;
     lol.message = "I found you some new shorts.";
-  } else if (/next pants/.test(query)) {
+  } else if (/different pants/.test(query)) {
     outfit[1] = Math.floor(Math.random() * 5) + 1;
     lol.message = "I found you some new pants.";
-  } else if (/next shoes/.test(query)) {
+  } else if (/different shoes/.test(query)) {
     outfit[2] = Math.floor(Math.random() * 5) + 1;
     lol.message = "I found you some new shoes. Hope you like them!";
+  } else {
+    lol.message = "I didn't understand that.";
   }
   res.end(lol.message);
 };
