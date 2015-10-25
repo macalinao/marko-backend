@@ -14,14 +14,7 @@ angular.module('marko', ['ui.router'])
   $urlRouterProvider.otherwise('/dashboard');
 })
 
-.controller('AiCtrl', function($scope) {
-
-  $scope.message = "OK, I found something.";
-
-  $scope.outfit = {
-    parts: [5, 1, 3],
-    weather: true
-  };
+.controller('AiCtrl', function($scope, $http, $interval) {
 
   $scope.talking = false;
 
@@ -61,10 +54,26 @@ angular.module('marko', ['ui.router'])
 
   });
 
+  $scope.message = 'Move in front of the camera to begin.';
+  $scope.start = false;
+  $interval(function() {
+    $http.get('/fetch_lol').then(function(data) {
+      if (!data.message) return;
+      $scope.start = true;
+      if (data.message !== $scope.message) {
+        $scope.message = data.message;
+        $scope.outfit = {
+          parts: data.outfit,
+          weather : data.cool
+        };
+      }
+    });
+  }, 250);
+
 
 })
 
-.controller('DashboardCtrl', function($scope) {
+.controller('DashboardCtrl', function($scope, $http) {
 
   Morris.Line({
     element: 'revenueChart',

@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 
-import { voiceHandler, fetchSession } from './voice';
+import { voiceHandler, fetchLol } from './voice';
 
 const app = express();
 
