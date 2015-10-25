@@ -96,6 +96,8 @@ export function voiceHandler(req, res) {
       `Anytime, ${user.name.nick}.`,
       `Sure thing, ${user.name.nick}.`
     );
+  } else if (/fuck/.test(query)) {
+    lol.message = "That's not very nice.";
   } else {
     lol.message = "I didn't understand that.";
   }
