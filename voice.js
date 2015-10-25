@@ -1,5 +1,5 @@
 const users = {
-  'pradyumanvig@hotmail.com': {
+  'pradyumanvig@outlook.com': {
     name: {
       first: 'Pradyuman',
       last: 'Vig',
