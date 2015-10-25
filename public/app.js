@@ -101,8 +101,8 @@ angular.module('marko', ['ui.router'])
     xLabels: ['week'],
     ykeys: ['a'],
     labels: ['Revenue'],
-    xLabelFormat: function (x) {
-      return '$' + x.toString();
+    yLabelFormat: function (x) {
+      return '$' + numberWithCommas(x);
     }
   });
 
@@ -110,3 +110,7 @@ angular.module('marko', ['ui.router'])
 
 .controller('PayCtrl', function($scope) {
 });
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
