@@ -26,6 +26,8 @@ export function voiceHandler(req, res) {
 
   const { uid, query, reset } = req.body;
 
+  console.log(JSON.stringify(req.body));
+
   let user = users[uid];
   if (!user) {
     user = users[uid] = {};
