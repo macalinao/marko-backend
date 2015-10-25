@@ -162,6 +162,41 @@ angular.module('marko', ['ui.router'])
     barColors: ['#f0ad4e']
   });
 
+  $scope.loyal = [
+    {
+      name: "Pradyuman Vig",
+      email: "pradyumanvig@outlook.com",
+      purchases: 21,
+      uses: 15,
+      maturity: '67%',
+      spent: 17.38 * 21
+    },
+    {
+      name: "Ian Macalinao",
+      email: "me@ian.pw",
+      purchases: 3,
+      uses: 5,
+      maturity: '30%',
+      spent: 17.38 * 3
+    },
+    {
+      name: "Dylan Macalinao",
+      email: "dylanmacalinao@gmail.com",
+      purchases: 2,
+      uses: 3,
+      maturity: '20%',
+      spent: 17.38 * 2
+    },
+    {
+      name: "Chris Brown",
+      email: "chrisbrown@nolancatholic.edu",
+      purchases: 1,
+      uses: 1,
+      maturity: '15%',
+      spent: 17.38 * 1
+    }
+  ];
+
 })
 
 .controller('PayCtrl', function($scope) {
