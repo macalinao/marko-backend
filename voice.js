@@ -39,6 +39,11 @@ export function voiceHandler(req, res) {
     res.json({ message: `Hello, ${user.name.first}. What are you looking for?` });
   } else {
     session = user.session;
+    if (!session) {
+      session = user.session = {
+        initial: true;
+      };
+    }
   }
 
   if (session.initial) {
