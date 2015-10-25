@@ -10,7 +10,13 @@ const users = {
       first: 'Ian',
       last: 'Macalinao'
     }
-  }
+  },
+  'dylanmacalinao@gmail.com': {
+    name: {
+      first: 'Dylan',
+      last: 'Macalinao'
+    }
+  },
 };
 
 export function voiceHandler(req, res) {
