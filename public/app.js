@@ -122,7 +122,8 @@ angular.module('marko', ['ui.router'])
     xkey: 'y',
     xLabels: ['week'],
     ykeys: ['a'],
-    labels: ['Kiosk Interactions']
+    labels: ['Kiosk Interactions'],
+    lineColors: ['#d9534f']
   });
 
 
@@ -138,7 +139,8 @@ angular.module('marko', ['ui.router'])
     xkey: 'y',
     xLabels: ['Clothing Item'],
     ykeys: ['a'],
-    labels: ['Number of Purchases']
+    labels: ['Number of Purchases'],
+    barColors: ['#5cb85c']
   });
 
   Morris.Bar({
@@ -156,7 +158,8 @@ angular.module('marko', ['ui.router'])
     labels: ['Kiosk Recommendation Rate'],
     yLabelFormat: function (x) {
       return x.toString() + '%';
-    }
+    },
+    barColors: ['#f0ad4e']
   });
 
 })
