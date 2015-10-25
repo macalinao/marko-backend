@@ -36,7 +36,9 @@ export function voiceHandler(req, res) {
     session = user.session = {
       initial: true
     };
-    res.json({ message: `Hello, ${user.name.first}. What are you looking for?` });
+    let asdf = { message: `Hello, ${user.name.first}. What are you looking for?` };
+    session.lol = asdf;
+    res.json(asdf);
   } else {
     session = user.session;
     if (!session) {
@@ -65,6 +67,7 @@ export function voiceHandler(req, res) {
       );
     }
 
+    session.lol = ret;
     res.json(ret);
   }
 
