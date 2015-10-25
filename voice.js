@@ -1,4 +1,11 @@
-const users = {};
+const users = {
+  'pradyumanvig@hotmail.com': {
+    name: {
+      first: 'Pradyuman',
+      last: 'Vig'
+    }
+  }
+};
 
 export function voiceHandler(req, res) {
 
@@ -9,6 +16,6 @@ export function voiceHandler(req, res) {
     user = users[uid] = {};
   }
 
-  let message = "Nice to see you again, Pradyuman.";
+  let message = `Hello, ${user.name.first}. What are you looking for?`;
   res.json({ message });
 };
