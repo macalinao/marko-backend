@@ -9,6 +9,10 @@ angular.module('marko', ['ui.router'])
     url: '/dashboard',
     templateUrl: 'templates/dashboard.html',
     controller: 'DashboardCtrl'
+  }).state('pay', {
+    url: '/pay',
+    templateUrl: 'templates/pay.html',
+    controller: 'PayCtrl'
 	});
 
   $urlRouterProvider.otherwise('/dashboard');
@@ -102,4 +106,7 @@ angular.module('marko', ['ui.router'])
     }
   });
 
+})
+
+.controller('PayCtrl', function($scope) {
 });
