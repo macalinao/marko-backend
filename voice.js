@@ -43,9 +43,8 @@ export function voiceHandler(req, res) {
 
   if (session.initial) {
     delete session.initial;
-    let ret = {
-      outfit: nextOutfit()
-    };
+    let outfit = nextOutfit();
+    let ret = { outfit };
 
     if (/cool|cold/.test(query)) {
       ret.cool = true;
