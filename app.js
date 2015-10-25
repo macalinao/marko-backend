@@ -10,7 +10,7 @@ app.use(express.static(`${__dirname}/public`));
 let last = Date.now();
 app.use((req, res, next) => {
   if (Date.now() - last < 1000) {
-    res.end();
+    return res.end();
   }
   last = Date.now();
 });
