@@ -96,7 +96,7 @@ export function voiceHandler(req, res) {
       `Anytime, ${user.name.nick}.`,
       `Sure thing, ${user.name.nick}.`
     );
-  } else if (/fuck/.test(query)) {
+  } else if (/fuck|shit/.test(query)) {
     lol.message = "That's not very nice.";
   } else if (/(pick again|new outfit)/.test(query)) {
     lol.outfit = nextOutfit();
