@@ -4,6 +4,12 @@ const users = {
       first: 'Pradyuman',
       last: 'Vig'
     }
+  },
+  'me@ian.pw': {
+    name: {
+      first: 'Ian',
+      last: 'Macalinao'
+    }
   }
 };
 
