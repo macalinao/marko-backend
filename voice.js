@@ -22,6 +22,10 @@ const users = {
   },
 };
 
+const active = {
+  user: 'pradyumanvig@outlook.com'
+};
+
 export function voiceHandler(req, res) {
 
   const { uid, query, reset } = req.query;
@@ -81,4 +85,10 @@ function rand(...picks) {
 
 function nextOutfit() {
   return [0, 0, 0].map(() => Math.floor(Math.random() * 5) + 1);
+}
+
+export function fetchSession(req, res) {
+  let user = users[active.user];
+  let lol = (user.session || {}).lol;
+  res.json(lol);
 }
