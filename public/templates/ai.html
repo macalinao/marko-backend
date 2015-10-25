@@ -2,7 +2,6 @@
   <h1 class="animated fadeInUp">{{message}}</h1>
 
   <div ng-if="outfit && outfit.weather">
-    <h1 class="animated fadeInUp">{{message}}</h1>
     <div id="clothes">
       <img ng-src="images/clothes/shirt{{outfit.parts[0]}}.png" />
       <img ng-src="images/clothes/shorts{{outfit.parts[1]}}.png" ng-if="outfit.weather" />
