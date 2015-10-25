@@ -82,7 +82,10 @@ angular.module('marko', ['ui.router'])
     xkey: 'y',
     xLabels: ['week'],
     ykeys: ['a'],
-    labels: ['Revenue']
+    labels: ['Revenue'],
+    xLabelFormat: function (x) {
+      return '$' + x.toString();
+    }
   });
 
 });
