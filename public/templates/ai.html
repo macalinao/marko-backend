@@ -1,14 +1,22 @@
 <div id="ai">
+
   <div ng-if="!outfit">
-    <h1 class="animated fadeInUp">What would you like to wear?</h1>
+    <h1 class="animated fadeInUp">{{message}}</h1>
   </div>
+
   <div ng-if="outfit">
-    <img ng-src="images/clothes/shirt{{outfit.parts[0]}}.png" />
-    <img ng-src="images/clothes/{{(outfit.weather ? "shorts" : "pants") + outfit.parts[1]}}.png" />
-    <img ng-src="images/clothes/shoes{{outfit.parts[2]}}.png" />
+    <h1 class="animated fadeInUp">{{message}}</h1>
+    <div id="clothes">
+      <img ng-src="images/clothes/shirt{{outfit.parts[0]}}.png" />
+      <img ng-src="images/clothes/shorts{{outfit.parts[1]}}.png" ng-if="outfit.weather" />
+      <img ng-src="images/clothes/pants{{outfit.parts[1]}}.png" ng-if="!outfit.weather" />
+      <img ng-src="images/clothes/shoe{{outfit.parts[2]}}.png" />
+    </div>
   </div>
+
   <div id="siri">
     <div id="siriActive" ng-if="talking" ng-click="toggleTalking()"></div>
     <div id="siriPassive" ng-if="!talking" ng-click="toggleTalking()"></div>
   </div>
+
 </div>

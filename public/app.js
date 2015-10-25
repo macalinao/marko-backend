@@ -16,6 +16,13 @@ angular.module('marko', ['ui.router'])
 
 .controller('AiCtrl', function($scope) {
 
+  $scope.message = "OK, I found something.";
+
+  $scope.outfit = {
+    parts: [5, 1, 3],
+    weather: true
+  };
+
   $scope.talking = false;
 
   $scope.toggleTalking = function() {
