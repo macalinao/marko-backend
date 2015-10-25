@@ -41,7 +41,7 @@ export function voiceHandler(req, res) {
     session = user.session;
     if (!session) {
       session = user.session = {
-        initial: true;
+        initial: true
       };
     }
   }
