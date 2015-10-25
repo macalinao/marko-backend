@@ -9,5 +9,6 @@ export function voiceHandler(req, res) {
     user = users[uid] = {};
   }
 
-  res.json(user);
+  let message = "Nice to see you again, Pradyuman.";
+  res.json({ message });
 };

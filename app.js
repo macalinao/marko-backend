@@ -5,6 +5,7 @@ import { voiceHandler } from './voice';
 
 const app = express();
 
+app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
