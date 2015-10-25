@@ -120,3 +120,8 @@ export function fetchLol(req, res) {
   let lol = (user.session || {}).lol;
   res.json(lol);
 }
+
+export function reset(req, res) {
+  delete users[active.user].session;
+  res.end();
+}
