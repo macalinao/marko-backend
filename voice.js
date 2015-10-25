@@ -42,7 +42,7 @@ export function voiceHandler(req, res) {
     };
     let asdf = { message: `Hello, ${user.name.first}. What are you looking for?` };
     session.lol = asdf;
-    return res.json(asdf);
+    return res.end(asdf.message);
   } else {
     session = user.session;
     if (!session) {
@@ -72,7 +72,7 @@ export function voiceHandler(req, res) {
     }
 
     session.lol = ret;
-    return res.json(ret);
+    return res.end(ret.message);
   }
 
   let message = 'lol';
